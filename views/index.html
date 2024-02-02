@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LOGIN</title>
+  </head>
+  <style>
+    .login{
+      font-size: 25px;
+      font-weight: bold;
+    }
+    .main-container{
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      
+    }
+    .sub-container{
+      display: flex;
+      margin-bottom: 10px;
+    }
+    .child-container{
+      margin-right: 10px;
+    }
+
+  </style>
+
+  <body>
+
+
+    <div class="main-container">
+      <p class="login">Login</p>
+      <div class="sub-container">
+        <div class="child-container">
+          <input class="js-email" type="email">
+        </div>
+      <div class="child-container">
+        <a>Email</a>
+      </div>
+      </div>
+
+      <div class="sub-container">
+        <div class="child-container">
+          <input class="js-password" type="password">
+        </div>
+      <div class="child-container">
+        <a>Password</a>
+      </div>
+      </div>
+
+      <div class="sub-container">
+        <div  class="child-container">
+          <input type="checkbox">
+        </div>
+        <div class="child-container">
+          <a>Remember me</a>
+        </div>
+        <div class="child-container">
+          <a href="">Forgot Password?</a>
+        </div>
+      </div>
+
+      <div>
+        <button onclick="login()" class="js login">Login</button>
+      </div>
+
+      <p class="js-result"></p>
+
+      <div>
+        <p>Don't have an account? <a href="">Register</a></p>
+      </div>
+    </div>
+
+    <script>
+
+      const resultElement = document.querySelector('.js-result')
+
+      function login () {
+        const emailElement = document.querySelector('.js-email');
+        const email = emailElement.value;
+        // console.log(email);
+
+        const passwordElement = document.querySelector('.js-password');
+        const password = passwordElement.value;
+        // console.log(password);
+
+        if(email === 'mano' && password === '1234') {
+          location.href="login.html";
+        } else {
+          resultElement.innerHTML = 'User name or Password incorrect';
+        }
+      };  
+    </script>
+  </body>
+</html>
